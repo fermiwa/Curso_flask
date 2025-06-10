@@ -3,17 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Site da Fer{% endblock %}</title>
+
+    <!--pra aparecer na aba do navegador-->
+    <title>{% block title %}Site da Fer{% endblock %}</title> 
+
     <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
   </head>
   <body>
     <div class="container">
       <div class="d-flex justify-content-between align-items-center py-3 mb-4 border-bottom">
-        <h3 class="text-muted">Site da Fer</h3>
+        <h3 class="text-muted">
+
+          <!--pra ser clicável e sempre mandar pro index-->
+          <a href="{{ url_for('default.index') }}" style="text-decoration: none; color: inherit;">
+                Site da Fer
+            </a>
+        </h3>
         <nav>
           <ul class="nav nav-pills">
             {# Botão Home #}
-            <li class="nav-item"><a href="{{ url_for('default.index') }}" class="nav-link active" aria-current="page">Home</a></li> {# Adicionei url_for para Home também #}
+            <li class="nav-item"><a href="{{ url_for('default.index') }}" class="nav-link active" aria-current="page">Home</a></li>
             
             {# Botão Sobre #}
             <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
